@@ -10,17 +10,11 @@
     <button class="btn btn-danger" @click="deleteAll">Borrar Tareas</button>
 
     <div class="mt-3" v-for="(item, index) in tasks" :key="index">
-      <div
-        role="alert"
-        :class="['alert', item.state ? 'alert-success' : 'alert-danger']"
-      >
+      <div role="alert" :class="['alert', item.state ? 'alert-success' : 'alert-danger']">
         <div class="d-flex justify-content-between align-items-center">
           <div>{{ index + 1 }} - {{ item.name }} - {{ item.state }}</div>
           <div>
-            <button
-              class="btn btn-success btn-sm mx-2"
-              @click="editTask(index)"
-            >
+            <button class="btn btn-success btn-sm mx-2" @click="editTask(index)">
               OK
             </button>
             <button class="btn btn-danger btn-sm" @click="deleteTask(index)">
